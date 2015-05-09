@@ -15,7 +15,7 @@
     .chat-inner.scrollable-div
       .chat-message
         ul.chat
-          each m in model.private_messages
+          each m in model.privateMessages
             li.left.clearfix
               span.chat-img.pull-left
                 = gravatar-image email=m.userChannel.userServer.user.email size=120
