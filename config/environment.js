@@ -25,6 +25,7 @@ module.exports = function(environment) {
     endpoints: {
       token: 'token',
       tokenNew: 'token/new.json',
+      init: 'init'
     }
   };
 
