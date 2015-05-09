@@ -5,36 +5,4 @@
       each uc in userChannels
         = channel-master userChannel=uc
       else
-        | You are nor in any channels
-  .slimScrollDiv.bg-white
-    .chat-inner.scrollable-div
-      .chat-message
-        ul.chat
-          li.left.clearfix
-            span.chat-img.pull-left
-              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
-            .chat-body.clearfix
-              .header
-                strong.primary-font
-                  | John Doe
-                small.pull-right.text-muted
-                  i.fa.fa-clock-o 12 mins ago
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          li.right.clearfix
-            span.chat-img.pull-right
-              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
-            .chat-body.clearfix
-              .header
-                strong.primary-font
-                  | John Doe
-                small.pull-right.text-muted
-                  i.fa.fa-clock-o 12 mins ago
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-      .chat-box.bg-white
-        .input-group
-          input.form-control.border.no-shadow.no-rounded
-          .input-group-btn
-            button.btn.btn-success.no-rounded Send
-
-= output
+        | You are not in any channels
