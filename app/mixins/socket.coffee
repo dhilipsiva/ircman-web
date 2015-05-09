@@ -16,33 +16,31 @@ SocketMixin = Ember.Mixin.create
     disconnect: ->
       console.log "Socket got disconnected!"
 
-    message_new: (data)->
-      Notify.info "New Message"
-      message = @store.push "message", @store.normalize "message", data.message
+    message_new: (message)->
+      Notify.success "New Message"
+      @store.push "message", @store.normalize "message", message
 
-    pm_new: (data)->
-      Notify.info "New Private Message"
-      pm = @store.push "private-message", @store.normalize "private-message", data.pm
+    pm_new: (pm)->
+      Notify.success "New Private Message"
+      @store.push "private-message", @store.normalize "private-message", pm
 
-    user_server_new: (data)->
-      Notify.info "New server added"
-      server = @store.push "server", @store.normalize "server", data.server
-      user_server = @store.push "user-server", @store.normalize "user-server", data.user_server
+    user_server_new: (user_server)->
+      Notify.success "New server added"
+      @store.push "user-server", @store.normalize "user-server", user_server
 
-    user_channel_new: (data)->
-      Notify.info "New Channel added"
-      channel = @store.push "channel", @store.normalize "channel", data.channel
-      user_channel = @store.push "user-channel", @store.normalize "user-channel", data.user_channel
+    user_channel_new: (user_channel)->
+      Notify.success "New Channel added"
+      @store.push "user-channel", @store.normalize "user-channel", user_channel
 
-    conversation_new: (data)->
-      Notify.info "New Conversation"
-      conversation = @store.push "conversation", @store.normalize "conversation", data.conversation
+    conversation_new: (conversation)->
+      Notify.success "New Conversation"
+      @store.push "conversation", @store.normalize "conversation", conversation
 
 
     message: (data) ->
       message = data.message
       notifyType = data.notifyType
-      Notify.info message if notifyType is ENUMS.NOTIFY.INFO
+      Notify.success message if notifyType is ENUMS.NOTIFY.success
       Notify.success message if notifyType is ENUMS.NOTIFY.SUCCESS
       Notify.warning message if notifyType is ENUMS.NOTIFY.WARNING
       Notify.alert message if notifyType is ENUMS.NOTIFY.ALERT

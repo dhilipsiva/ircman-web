@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
+`import SocketMixin from 'ircman/mixins/socket';`
 
-IndexController = Ember.Controller.extend
+IndexController = Ember.Controller.extend SocketMixin,
   needs: ["application"]
 
   userChannels:( ->
