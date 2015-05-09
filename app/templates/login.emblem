@@ -7,14 +7,14 @@
       .panel-body
         form.form-login submit='login'
           .form-group
-            = input class="form-control input-sm" value=identification placeholder='Username' name='identification' autofocus="true"
+            = input class="form-control input-lg" value=identification placeholder='Username' name='identification' autofocus="true"
 
           .form-group
-            = input class="form-control input-sm" value=password placeholder='Password' name='password' type='password'
+            = input class="form-control input-lg" value=password placeholder='Password' name='password' type='password'
 
           hr
 
-          button#btn-login-main.btn.btn-success.btn-sm.login-link.pull-right type="submit" Log In
+          button#btn-login-main.btn.btn-primary.btn-lg type="submit" Log In
 
       .panel-footer
         .text-center Built with ♥ by your <a href="http://dhilipsiva.com" target="_blank">dhilipsiva</a>

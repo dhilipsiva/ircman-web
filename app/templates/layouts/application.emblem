@@ -1,0 +1,21 @@
+#wrapper
+  aside
+    .sidebar-inner.scrollable-sidebar
+      h3.text-white.text-center
+        | IRCMan
+      / img src="img/user.jpg" alt="User Avatar"
+      .user-block.clearfix
+        .detail
+          strong
+            | John Doe
+          span.badge.badge-danger.m-left-xs 4
+      .main-menu
+        ul
+          link-to 'index' tagName="li"
+            a href=view.href
+              span.menu-icon
+                i.fa.fa-desktop.fa-lg
+              span class="text"
+                | Chats
+  #main-container
+    = outlet
