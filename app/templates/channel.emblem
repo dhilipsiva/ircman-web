@@ -11,27 +11,22 @@
         = conversation-master conversation=conversation
       else
         | You dont have any conversation
-  .slimScrollDiv.bg-white
-    .chat-inner.scrollable-div
-      .chat-message
-        ul.chat
-          each m in model.messages
-            li.left.clearfix
-              span.chat-img.pull-left
-                = gravatar-image email=m.userChannel.userServer.user.email size=120
-              .chat-body.clearfix
-                .header
-                  strong.primary-font
-                    = m.userChannel.nickname
-                  small.pull-right.text-muted
-                    i.fa.fa-clock-o
-                      = m.createdOn
-                p = m.text
-
-      .chat-box.bg-white
-        .input-group
-          input.form-control.border.no-shadow.no-rounded
-          .input-group-btn
-            button.btn.btn-success.no-rounded Send
-
-
+  .chat-inner
+    .chat-message
+      .input-group.chat-fix
+        input.form-control.border.no-shadow.no-rounded
+        .input-group-btn
+          button.btn.btn-success.no-rounded Send
+      ul.chat
+        each m in model.reversedMessages
+          li.left.clearfix
+            span.chat-img.pull-left
+              = gravatar-image email=m.userChannel.userServer.user.email size=120
+            .chat-body.clearfix
+              .header
+                strong.primary-font
+                  = m.userChannel.nickname
+                small.pull-right.text-muted
+                  i.fa.fa-clock-o
+                    = m.createdOn
+              p = m.text

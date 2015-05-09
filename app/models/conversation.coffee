@@ -5,4 +5,9 @@ Conversation = DS.Model.extend
   userChannel2: DS.belongsTo 'user-channel', inverse: null
   privateMessages: DS.hasMany 'private-message'
 
+
+  reversedPrivateMessages: (->
+    @get("privateMessages").sortBy('date').reverse()
+  ).property "privateMessages.@each"
+
 `export default Conversation`
