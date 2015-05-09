@@ -17,7 +17,7 @@ class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
         store.find('user', result.user.id).then (user)->
           user.set 'urls', result.urls
           controller.set 'currentUser', user
-          controller.subscribe user.get "uuid"
+          # controller.subscribe user.get "uuid"
         resolve result
 
   setupController: (controller)->

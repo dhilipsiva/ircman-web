@@ -56,7 +56,8 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     "connect-src": "'self' http://localhost:8000",
     "font-src": "'self' http://fonts.gstatic.com",
-    "style-src": "'self' fonts.googleapis.com"
+    "style-src": "'self' fonts.googleapis.com",
+    "img-src": "'self' https://www.gravatar.com http://www.gravatar.com"
   };
 
   ENV.APP.API_BASE = [ENV.APP.API_HOST, ENV.APP.API_NAMESPACE].join("/");
