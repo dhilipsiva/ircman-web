@@ -3,12 +3,12 @@
     .sidebar-inner.scrollable-sidebar.text-center
       h3.text-white
         | IRCMan
-      img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
+      = gravatar-image email=controllers.application.currentUser.email size=120
       .user-block.clearfix
         .detail
           strong
-            | John Doe
-          span.badge.badge-danger.m-left-xs 4
+            = controllers.application.currentUser.username
+          / span.badge.badge-danger.m-left-xs 4
       .main-menu.text-left
         ul
           link-to 'index' tagName="li"
