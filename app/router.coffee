@@ -7,5 +7,6 @@ Router = Ember.Router.extend
 Router.map ->
   @route 'login'
   @resource 'channel', path: 'channel/:channelId', ->
+  @resource 'conversation', path: 'conversation/:conversationId', ->
 
 `export default Router;`

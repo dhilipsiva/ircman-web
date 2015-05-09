@@ -10,12 +10,12 @@
       each conversation in conversations
         = conversation-master conversation=conversation
       else
-        | You dont have any conversation
+        | You dont have and Conversation
   .slimScrollDiv.bg-white
     .chat-inner.scrollable-div
       .chat-message
         ul.chat
-          each m in model.messages
+          each m in model.private_messages
             li.left.clearfix
               span.chat-img.pull-left
                 = gravatar-image email=m.userChannel.userServer.user.email size=120
@@ -33,5 +33,3 @@
           input.form-control.border.no-shadow.no-rounded
           .input-group-btn
             button.btn.btn-success.no-rounded Send
-
-

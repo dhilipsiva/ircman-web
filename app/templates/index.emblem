@@ -2,7 +2,12 @@
   .chat-sidebar.border-right.bg-white
     .friend-list
       h4 Channels
-      each uc in userChannels
-        = channel-master userChannel=uc
+      each userChannel in userChannels
+        = channel-master userChannel=userChannel
+      else
+        | You are not in any channels
+      h4 Coversations
+      each conversation in conversations
+        = conversation-master conversation=conversation
       else
         | You are not in any channels

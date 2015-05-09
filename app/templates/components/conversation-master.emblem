@@ -1,0 +1,6 @@
+link-to 'conversation.index' conversation.id tagName="li"
+  a.clearfix href="#"
+    div.friend-name
+      strong
+        | Foo
+        = conversation.id

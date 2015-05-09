@@ -1,9 +1,9 @@
 `import Ember from 'ember'`
 
-IndexController = Ember.Controller.extend
+ConversationController = Ember.Controller.extend
   needs: ["application"]
 
-  userChannels:( ->
+  userChannels: (->
     @store.all "user-channel"
   ).property()
 
@@ -11,4 +11,4 @@ IndexController = Ember.Controller.extend
     @store.all "conversation"
   ).property()
 
-`export default IndexController`
+`export default ConversationController`

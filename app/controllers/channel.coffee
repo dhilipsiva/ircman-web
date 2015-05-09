@@ -7,4 +7,8 @@ ChannelController = Ember.Controller.extend
     @store.all "user-channel"
   ).property()
 
+  conversations:( ->
+    @store.all "conversation"
+  ).property()
+
 `export default ChannelController`

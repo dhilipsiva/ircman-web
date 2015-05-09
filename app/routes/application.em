@@ -30,7 +30,7 @@ class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
           store.pushPayload 'user-channel', 'user-channel': user_channel
 
         for conversation in result.conversations
-          store.pushPayload 'conversation', 'conversation': user_server
+          store.pushPayload 'conversation', 'conversation': conversation
 
         for message in result.messages
           store.pushPayload 'message', 'message': message
