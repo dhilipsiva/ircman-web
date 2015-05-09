@@ -1,0 +1,85 @@
+.pricing-widget {
+    position: relative;
+    border: 1px solid @light-color;
+    .box-shadow(0 1px 1px rgba(0,0,0,0.05));
+    cursor: pointer;
+    margin: 20px 0;
+    .border-radius(6px);
+    .transition(all 0.4s ease);
+
+    &.active    {
+        z-index: 2;
+    }
+
+    &:not(.pricing-title).active ,&:not(.pricing-title):hover {
+        .box-shadow(0 3px 25px -4px rgba(0,0,0,0.9));
+        .transition(all 0.4s ease);
+
+        .pricing-cost   {
+            color: #999;
+            .transition(all 0.3s ease);
+        }
+    }
+
+    .pricing-head   {
+        background: #fff;
+        color: #777;
+        border-bottom: 1px solid @light-color;
+        padding: 6px 20px;
+        font-weight: 600;
+        font-size: 13px;
+        min-height: 31px;
+    }
+
+    .pricing-body   {
+        background: #fff;
+        color: #626262;
+    }
+
+    .pricing-cost   {
+        background: #fff;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid @light-color;
+        color: @default-font-color;
+        .transition(all 0.3s ease);
+        font-size: 18px;
+        min-height: 125px;
+
+        strong    {
+            font-size: 30px;
+        }
+    }
+
+    .pricing-list   {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        [class*="icon-"]    {
+            margin-right: 30px;
+        }
+
+        &.text-center    {
+            li  {
+                text-align: center;
+            }
+        }
+
+        li  {
+            padding: 10px;
+            border-bottom: 1px solid @light-color;
+
+            &:last-child    {
+                min-height: 84px;
+                padding-top: 40px;
+                .box-shadow(none);
+                border-bottom: none;
+
+                [class*="icon-"]    {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

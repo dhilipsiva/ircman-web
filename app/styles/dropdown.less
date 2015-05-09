@@ -1,0 +1,224 @@
+.open > .dropdown-menu.slidedown {
+    .animation(slidedown 0.9s linear);
+    overflow: hidden;
+}
+
+.dropdown-menu  {
+    font-size: 12px;
+
+    &.dark {
+        background:#1a1a1a;
+
+        .divider{
+            border-top: 1px solid #0a0c0e;
+            border-bottom: 1px solid #212121;
+        }
+
+        li   {
+            background:#1a1a1a;
+            a {
+                color:#fff;
+                text-shadow: 0 1px rgba(0,0,0,0.25);
+                &:hover,&:focus {
+                    background: @dropdown-hover-color;
+                }
+            }
+        }
+    }
+
+    li  {
+        a   {
+            padding: 4px 20px;
+
+            &:hover ,&:focus    {
+                background: @dropdown-hover-color;
+                color: #fff;
+            }
+
+            img {
+                float: left;
+                width: 40px;
+                height: 40px;
+                .border-radius(50em);
+            }
+
+            .detail {
+                float: left;
+                margin-left: 10px;
+                white-space: normal;
+                p   {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &.message  {
+        width: 280px;
+        padding: 0;
+
+        li  {
+            border-bottom: 1px solid #ddd;
+            &:first-child {
+                a  {
+                    .border-radius(2px 2px 0 0);
+                    background: #fff;
+                    color: #777;
+                    &:hover ,&:focus {
+                        background: #fff;
+                        color: #777;
+                    }
+                }
+            }
+            &:last-child  {
+                border: none;
+                a  {
+                    .border-radius(0 0 2px 2px);
+                    background: #fff;
+                    color: #777;
+                }
+            }
+            a   {
+                padding: 10px;
+                p   {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                img {
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    .border-radius(50em);
+                }
+
+                .detail {
+                    float: left;
+                    margin-left: 10px;
+                    white-space: normal;
+                }
+
+                &:hover ,&:focus {
+                    background-color: #efefef;
+                    color: #626262;
+                    .transition(all 0.2s ease);
+                }
+            }
+        }
+    }
+
+    &.task  {
+        top: 95%;
+        padding: 0;
+        width: 250px;
+
+        li  {
+            border-bottom: 1px solid #ddd;
+            &:first-child {
+                a  {
+                    .border-radius(2px 2px 0 0);
+                    background-color: #fff;
+                    color: #777;
+                    &:hover ,&:focus {
+                        background: #fff;
+                        color: #777;
+                    }
+                }
+            }
+            &:last-child  {
+                border: none;
+                a  {
+                    .border-radius(0 0 2px 2px);
+                    background-color: #fff;
+                    color: #777;
+                }
+            }
+            a   {
+                padding: 10px;
+                cursor: pointer;
+
+                 &:hover ,&:focus {
+                    background-color: #eee;
+                    color: #777;
+                    .transition(all 0.2s ease);
+                }
+            }
+        }
+
+        .progress   {
+            height: 10px;
+            line-height: 10px;
+            margin: 0;
+            .progress-bar    {
+                font-size: 11px;
+            }
+        }
+    }
+
+    &.notification  {
+        top: 95%;
+        padding: 0;
+        width: 250px;
+
+        li  {
+            border-bottom: 1px solid #ddd;
+            &:first-child {
+                a  {
+                    .border-radius(2px 2px 0 0);
+                    background-color: #fff;
+                    color: #777;
+                    &:hover ,&:focus {
+                        background: #fff;
+                        color: #777;
+                    }
+                }
+            }
+            &:last-child  {
+                border: none;
+                a  {
+                    .border-radius(0 0 2px 2px);
+                    background-color: #fff;
+                    color: #777;
+                }
+            }
+            a   {
+                padding: 10px;
+                cursor: pointer;
+                position: relative;
+
+                 &:hover ,&:focus {
+                    background-color: #eee;
+                    color: #777;
+                    .transition(all 0.2s ease);
+                }
+
+                .notification-icon  {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    .border-radius(3px);
+                    font-size: 14px;
+                }
+
+                .time   {
+                    position: absolute;
+                    right: 5px;
+                    top: 12px;
+                }
+            }
+        }
+    }
+}
+
+.dropdown-demo    {
+    display: inline-block;
+    position: relative;
+	height: 180px;
+	width: 200px;
+    >.dropdown-menu    {
+	display: block;
+	position: static;
+        text-shadow: none;
+    }
+}

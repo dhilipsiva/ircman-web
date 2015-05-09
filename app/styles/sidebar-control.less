@@ -1,0 +1,212 @@
+#wrapper    {
+    position: relative;
+    overflow: hidden;
+    min-height: 800px;
+    background-color: #f9f9f9;
+
+    &.sidebar-mini {
+        @media (min-width: 768px) {
+
+            #top-nav    {
+                .brand  {
+                    width: @mini-sidebar-width;
+                    //.transition(all 0.5s ease);
+
+                    .text-toggle    {
+                        display: none;
+                    }
+                }
+            }
+
+            aside   {
+                 width: @mini-sidebar-width;
+
+                .slimScrollDiv  {
+                    overflow: visible !important;
+
+                    .slimScrollBar  {
+                        opacity: 0 !important;
+                    }
+
+                    .slimScrollRail  {
+                        opacity: 0 !important;
+                    }
+                }
+
+                .sidebar-inner  {
+                    overflow: visible !important;
+
+                    .size-toggle    {
+                        text-align: center;
+
+                        .pull-right {
+                            display: none;
+                        }
+                    }
+                    .user-block   {
+                        text-align: center;
+                        img {
+                            float: none;
+                        }
+                        .detail {
+                            display: none;
+                        }
+                    }
+
+                    .search-block   {
+                        display: none;
+                    }
+
+                    .main-menu  {
+                        >ul {
+                            > li  {
+
+                                &:hover {
+                                    .submenu    {
+                                        display: block;
+                                        .animation(fadeIn 0.4s ease);
+
+                                        &.third-level, &.fourth-level   {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                > a   {
+                                    text-align: center;
+                                    font-size: 11px;
+                                    padding: 13px 10px;
+
+                                    .menu-icon  {
+                                        display: block;
+                                    }
+
+                                    .text   {
+                                        display:block;
+                                        margin-top:5px;
+                                        margin-left: 0;
+                                    }
+
+                                    .badge {
+                                        display: none;
+                                    }
+                                }
+
+                                .submenu    {
+                                    display: none;
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    z-index: 1000;
+                                    display: none;
+                                    float: left;
+                                    min-width: 160px;
+                                    padding: 5px 0;
+                                    margin: 2px 0 0;
+                                    font-size: 14px;
+                                    list-style: none;
+                                    background-color: #fff;
+                                    border: 1px solid #ccc;
+                                    border: 1px solid rgba(0,0,0,0.15);
+                                    .border-radius(4px);
+                                    right: -160px;
+                                    left: auto;
+                                    top: -5px;
+                                    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+                                    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+                                    background-clip: padding-box;
+
+                                    li  {
+                                        position: relative;
+
+                                        &:hover {
+                                            .submenu    {
+                                                &.third-level  {
+                                                    display: block;
+                                                    .animation(fadeIn 0.4s ease);
+                                                }
+                                            }
+                                        }
+
+                                        a   {
+                                            background: #fff;
+                                            text-align: left;
+                                            padding: 4px 20px;
+                                            color: #333;
+
+                                            .submenu-label  {
+                                                color: #333 !important;
+                                            }
+
+                                            &:hover {
+                                                background-color: #f2f2f2;
+                                                .submenu-label  {
+                                                    color: #222 !important;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.third-level  {
+                                        li  {
+                                            &:hover {
+                                                .submenu    {
+                                                    &.fourth-level  {
+                                                        display: block;
+                                                        .animation(fadeIn 0.4s ease);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .alert  {
+                        display:none;
+                    }
+                }
+            }
+            #main-container ,footer {
+                margin-left: @mini-sidebar-width;
+                //.transition(all 0.5s ease);
+            }
+        }
+    }
+
+    &.sidebar-display {
+        @media (max-width: 767px) {
+            aside   {
+                left: 0;
+                //.transition(all 0.5s ease);
+            }
+
+            #top-nav   {
+                left : 0;
+                right: -@sidebar-width;
+            }
+
+            #main-container ,footer {
+                left: @sidebar-width;
+                right: -@sidebar-width;
+                //.transition(all 0.5s ease);
+            }
+        }
+    }
+
+    &.sidebar-hide {
+        @media (min-width: 768px) {
+            aside   {
+                left: -@sidebar-width;
+                //.transition(all 0.5s ease);
+            }
+
+            #main-container ,footer {
+                margin-left: 0;
+                //.transition(all 0.5s ease);
+            }
+        }
+    }
+}

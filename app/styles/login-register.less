@@ -1,0 +1,28 @@
+.login-wrapper
+{
+    position: absolute;
+    top: 50px;
+	width: 100%;
+    margin-left: 0;
+    .animation(bounceInDownSmall 1s ease);
+
+    &.fadeOutUp
+    {
+        .animation(fadeOutUp 0.5s ease-out);
+        opacity: 0;
+    }
+
+    .login-widget {
+        margin: 0 auto;
+	width: 400px;
+	margin-top: 20px;
+
+        @media (max-width: 480px) {
+            width: 100%;
+        }
+
+        .widget {
+            .box-shadow(0 1px 15px -4px #000);
+        }
+    }
+}

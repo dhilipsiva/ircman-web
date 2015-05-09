@@ -1,0 +1,28 @@
+.gallery-container   {
+    .gallery-item    {
+        display: inline-block;
+        width: 33.33333%;
+        float: left;
+        overflow: hidden;
+
+        @media (max-width: 1200px) {
+            width: 50%;
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+
+        .image-wrapper   {
+            width: 100%;
+            padding-top: 60%;
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

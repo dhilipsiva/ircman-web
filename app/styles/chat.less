@@ -1,0 +1,247 @@
+@chat-sidebar-width: 250px;
+
+#wrapper    {
+    .chat-wrapper   {
+        position: relative;
+
+        .chat-sidebar   {
+            position: fixed;
+            width: @chat-sidebar-width;
+            left: @sidebar-width;
+            top: @topnav-height;
+            bottom: 0;
+            height: 100%;
+            overflow-y: auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            .transition(all 0.5s ease);
+
+            @media (max-width: 767px) {
+                left: -@chat-sidebar-width;
+                .transition(all 0.5s ease);
+            }
+
+            @media (max-width: 868px) and (min-width: 768px)    {
+                left: @mini-sidebar-width !important;
+                .transition(all 0.5s ease);
+            }
+
+            .friend-list   {
+                list-style: none;
+
+                li  {
+                    border-bottom: 1px solid #eee;
+
+                    &.active    {
+                        a   {
+                            background-color: @light-color;
+                        }
+                    }
+
+                    a   {
+                        position: relative;
+                        display: block;
+                        padding: 10px;
+                        .transition(all 0.2s ease);
+
+                        img {
+                            float: left;
+                            width: 45px;
+                            height: 45px;
+                            margin-right: 10px;
+                        }
+
+                        .friend-name    {
+                            color: #777;
+
+                            &:hover {
+                                color: #777;
+                            }
+                        }
+
+                        .last-message   {
+                            width: 65%;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        .time   {
+                            position: absolute;
+                            top: 10px;
+                            right: 8px;
+                        }
+
+                        .chat-alert {
+                            position: absolute;
+                            right: 8px;
+                            top: 27px;
+                            font-size: 10px;
+                            padding: 3px 5px;
+                        }
+
+                        &:hover {
+                            background-color: #eee;
+                            .transition(all 0.2s ease);
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat-inner  {
+            position: fixed;
+            top: 40px;
+            right: 0;
+            left: @chat-sidebar-width + @sidebar-width;
+            height: 100%;
+             overflow-y: auto;
+            .transition(all 0.5s ease);
+
+            @media (max-width: 767px) {
+                left: 0;
+                .transition(all 0.5s ease);
+            }
+
+            @media (max-width: 868px) and (min-width: 768px)    {
+                left: @mini-sidebar-width + @chat-sidebar-width !important;
+                .transition(all 0.5s ease);
+            }
+
+            .chat-header    {
+                position: fixed;
+                top: @topnav-height;
+                left: @sidebar-width + @chat-sidebar-width;
+                right: 0;
+                padding: 0 10px;
+                border-bottom: 1px solid #eee;
+                z-index: 10;
+                height: 40px;
+                .transition(all 0.5s ease);
+
+                @media (max-width: 767px) {
+                    left: 0;
+                    .transition(all 0.5s ease);
+                }
+
+                @media (max-width: 868px) and (min-width: 768px)    {
+                    left: @mini-sidebar-width + @chat-sidebar-width !important;
+                    .transition(all 0.5s ease);
+                }
+
+                .navbar-toggle   {
+                    float: left;
+                    margin-top: 0;
+                    color: #777;
+
+                    .notification-label {
+                        top: 4px;
+                        right: 2px;
+                    }
+                }
+
+                .btn    {
+                    margin-top: 8px;
+                }
+            }
+
+            .chat-body    {
+                padding-bottom: 20px;
+            }
+
+            .chat-message    {
+                padding: 60px 20px 115px;
+            }
+
+            .chat-box   {
+                position: fixed;
+                bottom: 0;
+                left: @sidebar-width + @chat-sidebar-width;
+                right: 0;
+                padding: 15px;
+                border-top: 1px solid #eee;
+                .transition(all 0.5s ease);
+
+                @media (max-width: 767px) {
+                    left: 0;
+                    .transition(all 0.5s ease);
+                }
+
+                @media (max-width: 868px) and (min-width: 768px)    {
+                    left: @mini-sidebar-width + @chat-sidebar-width !important;
+                    .transition(all 0.5s ease);
+                }
+            }
+        }
+
+        &.sidebar-display   {
+             @media (max-width: 767px) {
+                .chat-sidebar   {
+                    left: 0;
+                    .transition(all 0.5s ease);
+                }
+                .chat-inner  {
+                    left: @chat-sidebar-width;
+                    right: -@chat-sidebar-width;
+                    .transition(all 0.5s ease);
+
+                    .chat-header, .chat-box    {
+                        left: @chat-sidebar-width;
+                        right: -@chat-sidebar-width;
+                        .transition(all 0.5s ease);
+                    }
+                }
+             }
+        }
+    }
+
+    &.sidebar-mini  {
+        @media (min-width: 768px) {
+            .chat-wrapper   {
+                .chat-sidebar   {
+                    left: @mini-sidebar-width !important;
+                }
+
+                .chat-inner {
+                    left: @mini-sidebar-width + @chat-sidebar-width  !important;
+
+                    .chat-header ,.chat-box    {
+                        left: @mini-sidebar-width + @chat-sidebar-width  !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.sidebar-display  {
+        @media (max-width: 767px) {
+            .chat-wrapper   {
+                &.sidebar-display   {
+                    .chat-sidebar  {
+                        left: @sidebar-width;
+                    }
+
+                    .chat-inner {
+                        left: @sidebar-width + @chat-sidebar-width;
+                        right: -(@sidebar-width + @chat-sidebar-width);
+
+                        .chat-header ,.chat-box    {
+                            left: @sidebar-width + @chat-sidebar-width;
+                            right: -(@sidebar-width + @chat-sidebar-width);
+                        }
+                    }
+                }
+
+                .chat-inner {
+                    left: @sidebar-width;
+                    right: -@sidebar-width;
+
+                    .chat-header ,.chat-box    {
+                        left: @sidebar-width;
+                        right: -@sidebar-width;
+                    }
+                }
+            }
+        }
+    }
+}

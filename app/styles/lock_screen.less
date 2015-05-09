@@ -1,0 +1,41 @@
+#lockScreen {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+     &.in   {
+         .modal-dialog {
+            .transform(translate(0,0));
+            .transition(all 0.5s ease-out);
+         }
+     }
+
+    .modal-dialog   {
+        display: table-cell;
+        width: 270px !important;
+        vertical-align: middle;
+        .transform(translate(0,-40px));
+
+        .modal-content   {
+            background-color: transparent;
+            .box-shadow(none);
+            border: none;
+
+            .input-group    {
+                width: 270px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .lock-screen-img    {
+        text-align: center;
+
+        img {
+            .border-radius(50em);
+            width: 70px;
+            height: 70px;
+        }
+    }
+}
