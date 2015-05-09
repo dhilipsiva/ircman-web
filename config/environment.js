@@ -36,6 +36,9 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.socketHost = 'localhost';
+    ENV.socketPort = '8008';
+    ENV.socketSecure = false;
   }
 
   if (environment === 'test') {
@@ -51,10 +54,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.socketHost = 'ircman.co';
+    ENV.socketPort = '80';
+    ENV.socketSecure = false;
   }
   ENV.contentSecurityPolicy = {
-    "connect-src": "'self' http://localhost:8000",
+    "connect-src": "'self' http://localhost:8000 http://localhost:8008  ws://localhost:8008",
     "font-src": "'self' http://fonts.gstatic.com",
     "style-src": "'self' fonts.googleapis.com",
     "img-src": "'self' https://www.gravatar.com http://www.gravatar.com"

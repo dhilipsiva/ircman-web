@@ -20,3 +20,5 @@
                 | Chats
   #main-container
     = yield
+
+= ember-notify
