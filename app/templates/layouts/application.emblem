@@ -1,15 +1,15 @@
 #wrapper
   aside
-    .sidebar-inner.scrollable-sidebar
-      h3.text-white.text-center
+    .sidebar-inner.scrollable-sidebar.text-center
+      h3.text-white
         | IRCMan
-      / img src="img/user.jpg" alt="User Avatar"
+      img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
       .user-block.clearfix
         .detail
           strong
             | John Doe
           span.badge.badge-danger.m-left-xs 4
-      .main-menu
+      .main-menu.text-left
         ul
           link-to 'index' tagName="li"
             a href=view.href
@@ -18,4 +18,4 @@
               span class="text"
                 | Chats
   #main-container
-    = outlet
+    = yield

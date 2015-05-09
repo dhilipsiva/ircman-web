@@ -1,1 +1,37 @@
+.chat-wrapper
+  .chat-sidebar.border-right.bg-white
+    .friend-list
+      li.active.bounceInDown
+        a.clearfix href="#"
+          img.img-circle src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png"
+          div.friend-name
+            strong John Doe
+          div.last-message.text-muted Hello, Are you there?
+          small.time.text-muted Just now
+          small.chat-alert.badge.badge-danger 1
+  .slimScrollDiv.bg-white
+    .chat-inner.scrollable-div
+      .chat-message
+        ul.chat
+          li.left.clearfix
+            span.chat-img.pull-left
+              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
+            .chat-body.clearfix
+              .header
+                strong.primary-font
+                  | John Doe
+                small.pull-right.text-muted
+                  i.fa.fa-clock-o 12 mins ago
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          li.right.clearfix
+            span.chat-img.pull-right
+              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
+            .chat-body.clearfix
+              .header
+                strong.primary-font
+                  | John Doe
+                small.pull-right.text-muted
+                  i.fa.fa-clock-o 12 mins ago
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
 = output
