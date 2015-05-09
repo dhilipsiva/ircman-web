@@ -1,4 +1,5 @@
 `import Ember from 'ember'`
+`import Notify from 'ember-notify';`
 `import ENV from 'ircman/config/environment'`
 
 ChatInputComponent = Ember.Component.extend
@@ -17,7 +18,6 @@ ChatInputComponent = Ember.Component.extend
       Ember.$.post postUrl, data
       .then ->
         that.set "text", ""
-        Notify.success "Message Posted"
       .fail (xhr, message, status) ->
         if xhr.status is 403
           Notify.error xhr.responseJSON.message
