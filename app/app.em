@@ -1,15 +1,15 @@
 `import Ember from 'ember';`
 `import Resolver from 'ember/resolver';`
 `import loadInitializers from 'ember/load-initializers';`
-`import config from './config/environment';`
+`import ENV from 'ircman/config/environment';`
 
 Ember.MODEL_FACTORY_INJECTIONS = true
 
-class App extends Ember.Application
-  modulePrefix: config.modulePrefix
-  podModulePrefix: config.podModulePrefix
+class App extends Ember*.Application
+  modulePrefix: ENV*.modulePrefix
+  podModulePrefix: ENV*.podModulePrefix
   Resolver: Resolver
 
-loadInitializers App, config.modulePrefix
+loadInitializers App, ENV*.modulePrefix
 
 `export default App;`
