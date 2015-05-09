@@ -1,6 +1,6 @@
 `import DS from 'ember-data'`
 
-UserServer = DS.Model.extend
+UserServer = DS.Model.extend DS.EmbeddedRecordsMixin,
   label: DS.attr 'string'
   user: DS.belongsTo 'user'
   server: DS.belongsTo 'server'

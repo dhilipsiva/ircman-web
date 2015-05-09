@@ -1,0 +1,7 @@
+link-to 'channel.index' userChannel.channel.id tagName="li"
+  a.clearfix href="#"
+    div.friend-name
+      strong
+        = userChannel.userServer.server.host
+        | &nbsp; - &nbsp;
+        = userChannel.channel.name

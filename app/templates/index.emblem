@@ -1,14 +1,11 @@
 .chat-wrapper
   .chat-sidebar.border-right.bg-white
     .friend-list
-      li.active.bounceInDown
-        a.clearfix href="#"
-          img.img-circle src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png"
-          div.friend-name
-            strong John Doe
-          div.last-message.text-muted Hello, Are you there?
-          small.time.text-muted Just now
-          small.chat-alert.badge.badge-danger 1
+      h4 Channels
+      each uc in userChannels
+        = channel-master userChannel=uc
+      else
+        | You are nor in any channels
   .slimScrollDiv.bg-white
     .chat-inner.scrollable-div
       .chat-message

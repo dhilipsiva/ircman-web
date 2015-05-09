@@ -4,6 +4,6 @@
 PrivateMessage = DS.Model.extend BaseMessageMixin,
   read: DS.attr 'boolean'
   userChannel: DS.belongsTo 'user-channel'
-  conversation: belongsTo 'conversation'
+  conversation: DS.belongsTo 'conversation'
 
 `export default PrivateMessage`

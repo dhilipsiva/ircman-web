@@ -1,9 +1,10 @@
 #wrapper
   aside
     .sidebar-inner.scrollable-sidebar.text-center
-      h3.text-white
-        | IRCMan
-      = gravatar-image email=controllers.application.currentUser.email size=120
+      link-to 'index'
+        h3.text-white
+          | IRCMan
+        = gravatar-image email=controllers.application.currentUser.email size=120
       .user-block.clearfix
         .detail
           strong
