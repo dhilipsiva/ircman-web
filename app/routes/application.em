@@ -32,6 +32,12 @@ class ApplicationRoute extends Ember.Route with ApplicationRouteMixin
         for conversation in result.conversations
           store.pushPayload 'conversation', 'conversation': user_server
 
+        for message in result.messages
+          store.pushPayload 'message', 'message': message
+
+        for private_message in result.private_messages
+          store.pushPayload 'private-message', 'private-message': private_message
+
         resolve result
 
 

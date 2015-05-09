@@ -10,26 +10,18 @@
     .chat-inner.scrollable-div
       .chat-message
         ul.chat
-          li.left.clearfix
-            span.chat-img.pull-left
-              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
-            .chat-body.clearfix
-              .header
-                strong.primary-font
-                  | John Doe
-                small.pull-right.text-muted
-                  i.fa.fa-clock-o 12 mins ago
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          li.right.clearfix
-            span.chat-img.pull-right
-              img src="//www.gravatar.com/avatar/45a742e07ab5f1e1944cef0701ff0c4b.png" alt="User Avatar"
-            .chat-body.clearfix
-              .header
-                strong.primary-font
-                  | John Doe
-                small.pull-right.text-muted
-                  i.fa.fa-clock-o 12 mins ago
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          each m in model.messages
+            li.left.clearfix
+              span.chat-img.pull-left
+                = gravatar-image email=m.userChannel.userServer.user.email size=120
+              .chat-body.clearfix
+                .header
+                  strong.primary-font
+                    = m.userChannel.nickname
+                  small.pull-right.text-muted
+                    i.fa.fa-clock-o
+                      = m.createdOn
+                p = m.text
 
       .chat-box.bg-white
         .input-group
