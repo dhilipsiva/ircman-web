@@ -34,4 +34,10 @@
                   i.fa.fa-clock-o 12 mins ago
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
+      .chat-box.bg-white
+        .input-group
+          input.form-control.border.no-shadow.no-rounded
+          .input-group-btn
+            button.btn.btn-success.no-rounded Send
+
 = output
