@@ -14,10 +14,7 @@
   .slimScrollDiv.bg-white
     .chat-inner.scrollable-div
       .chat-message
-        .input-group.chat-fix
-          input.form-control.border.no-shadow.no-rounded
-          .input-group-btn
-            button.btn.btn-success.no-rounded Send
+        = chat-input model=model
         ul.chat
           each m in model.reversedPrivateMessages
             li.left.clearfix

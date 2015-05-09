@@ -1,0 +1,3 @@
+= input class="form-control border no-shadow no-rounded" value=text
+.input-group-btn
+  button.btn.btn-success.no-rounded click="sendChat" Send
