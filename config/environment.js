@@ -12,10 +12,19 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      API_HOST: '',
+      API_NAMESPACE: 'api'
+    },
+    'simple-auth': {
+      store: 'simple-auth-session-store:local-storage',
+      authorizer: 'authorizer:ircman',
+      authenticator: 'authenticator:ircman',
+      session: 'session:ircman'
+    },
+    endpoints: {
+      token: 'token',
+      tokenNew: 'token/new.json',
     }
   };
 
@@ -43,8 +52,15 @@ module.exports = function(environment) {
 
   }
   ENV.contentSecurityPolicy = {
-    "connect-src": "'self' http://localhost:8000"
+    "connect-src": "'self' http://localhost:8000",
+    "font-src": "'self' http://fonts.gstatic.com",
+    "style-src": "'self' fonts.googleapis.com"
   };
+
+  ENV.APP.API_BASE = [ENV.APP.API_HOST, ENV.APP.API_NAMESPACE].join("/");
+  ENV['simple-auth']['crossOriginWhitelist'] = [ENV.APP.API_HOST];
+  ENV['simple-auth']['loginEndpoint'] = [ENV.APP.API_BASE, ENV.endpoints.tokenNew].join("/");
+  ENV['simple-auth']['logoutEndpoint'] = [ENV.APP.API_BASE, ENV.endpoints.logout].join("/");
 
   return ENV;
 };

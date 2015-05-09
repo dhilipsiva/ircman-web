@@ -1,9 +1,10 @@
 `import Ember from 'ember';`
 `import ENV from 'ircman/config/environment';`
 
-class Router extends Ember*.Router
-  location: ENV*.locationType
+Router = Ember.Router.extend
+  location: ENV.locationType
 
-Router*.map ->
+Router.map ->
+  @route 'login'
 
 `export default Router;`
