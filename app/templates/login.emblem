@@ -1,0 +1,20 @@
+.login-wrapper.animate.bounceIn
+  .login-widget
+    .panel.panel-default
+      .panel-heading.clearfix
+        h3.text-center IRCMan - IRC Manager
+
+      .panel-body
+        form.form-login submit='login'
+          .form-group
+            = input class="form-control input-sm" value=identification placeholder='Username' name='identification' autofocus="true"
+
+          .form-group
+            = input class="form-control input-sm" value=password placeholder='Password' name='password' type='password'
+
+          hr
+
+          button#btn-login-main.btn.btn-success.btn-sm.login-link.pull-right type="submit" Log In
+
+      .panel-footer
+        .text-center Built with ♥ by your <a href="http://dhilipsiva.com" target="_blank">dhilipsiva</a>
