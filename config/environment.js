@@ -42,6 +42,9 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+  ENV.contentSecurityPolicy = {
+    "connect-src": "'self' http://localhost:8000"
+  };
 
   return ENV;
 };
