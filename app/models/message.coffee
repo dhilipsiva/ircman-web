@@ -3,6 +3,6 @@
 
 Message = DS.Model.extend BaseMessageMixin,
   channel: DS.belongsTo 'channel'
-  userChannel: DS.belongsTo 'user-channel'
+  userChannel: DS.belongsTo 'user-channel', async:true
 
 `export default Message`

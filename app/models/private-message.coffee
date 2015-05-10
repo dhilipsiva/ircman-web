@@ -3,7 +3,7 @@
 
 PrivateMessage = DS.Model.extend BaseMessageMixin,
   read: DS.attr 'boolean'
-  userChannel: DS.belongsTo 'user-channel'
+  userChannel: DS.belongsTo 'user-channel', async: true
   conversation: DS.belongsTo 'conversation'
 
 `export default PrivateMessage`
